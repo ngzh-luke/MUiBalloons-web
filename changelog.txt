@@ -4,4 +4,10 @@ MU iBalloons, myBalloons System update history
 # Created on November 19, 2022
 # Config the System version in __init__.py
 
-Initial Create: initial created on November 19, 2022 -> 0.1
+Initial Create: initial created on November 19, 2022 -> 0.01
+Initial Development: Root-view template draft, custom error landing pages implemented on November 19, 2022 -> 0.1
+
+TO-DO:
+- Implement custom navigation bar
+- Login and Signup pages
+- Home page
