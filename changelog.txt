@@ -1,0 +1,7 @@
+MU iBalloons, myBalloons System update history
+
+# The project is developed by Kittipich "Luke" Aiumbhornsin
+# Created on November 19, 2022
+# Config the System version in __init__.py
+
+Initial Create: initial created on November 19, 2022 -> 0.1
