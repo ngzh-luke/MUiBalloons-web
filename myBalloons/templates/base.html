@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="des" />
+    <meta name="author" content="Luke" />
+
+    <title>{% block title %}[ROOT TEMPLATE]{% endblock %}</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static',
+    filename='style.css') }}">
+  </head>
+  <body>
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error' %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% elif category == 'warning' %}
+    <div class="alert alert-warning alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% elif category == 'primary' %}
+    <div class="alert alert-primary alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% elif category == 'secondary' %}
+    <div class="alert alert-secondary alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% elif category == 'info' %}
+    <div class="alert alert-info alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% elif category == 'light' %}
+    <div class="alert alert-light alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% elif category == 'dark' %}
+    <div class="alert alert-dark alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %} {% endfor %} {% endif %} {% endwith %}
+
+    <div class="container">
+      {% block content %}<a href="/">Click Here To Redirect To HOME Page</a> {%
+      endblock %}
+    </div>
+
+    <!-- <script>
+      var dt = new Date();
+      document.getElementById("date-time").innerHTML = dt;
+    </script> -->
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"
+    ></script>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <footer style="font-weight: bold">
+      <div align="center" class="footer">
+        {% block aboutHeader %}
+        <span
+          style="
+            font-style: italic;
+            font-size: 1.27em;
+            font-weight: 800;
+            color: rgb(52, 24, 211);
+          "
+          ><strong>ABOUT myBalloons System</strong></span
+        ><br />
+        {% block about %}{{about}}{% endblock %}
+        <br />
+        <u>myBalloons System</u> is created by
+        <span style="font-style: italic; color: blue"
+          >Kittipich "Luke" Aiumbhornsin.</span
+        ><br />This project is licensed under the terms of the <br />
+        <div class="license-link">
+          Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+          International Public License (CC BY-NC-SA 4.0).
+          <a
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            target="_blank"
+            ><br /><span style="font-size: small"
+              >Click for more information of CC BY-NC-SA 4.0</span
+            ></a
+          >
+        </div>
+        <br />ⓒ 2022 MU iBalloons <br />{% endblock %}
+      </div>
+    </footer>
+  </body>
+</html>
