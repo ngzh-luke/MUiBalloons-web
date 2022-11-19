@@ -1,5 +1,5 @@
 # Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License
-The project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License
+The project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License.
 
 You are free to:
 
