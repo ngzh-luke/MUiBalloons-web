@@ -1,4 +1,4 @@
-The project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License
+# The project is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 License
 
 You are free to:
 
@@ -12,7 +12,7 @@ Under the following terms:
 	ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
 
 
-Legal Code:
+# Legal Code:
 
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
 
