@@ -25,5 +25,5 @@
 TO-DO:
 
 - Implement custom navigation bar [DONE]
-- Login and Signup pages
+- Login and Signup pages [Expect to start at v0.135 and Expect to working at v0.14]
 - Home page (Partially [DONE] -> shown texts needed to revised if needed)
