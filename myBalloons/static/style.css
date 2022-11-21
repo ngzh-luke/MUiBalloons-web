@@ -13,7 +13,8 @@
 
 body {
   font-family: "Thasadith", sans-serif;
-  background: #eee;
+  display: flex;
+  flex-direction: column;
 }
 
 a,
@@ -27,6 +28,10 @@ h2,
 h3 {
   font-family: "Thasadith", sans-serif;
   margin: 10;
+  font-weight: bold;
+}
+h1 {
+  font-size: 3.9em;
 }
 
 h4,
@@ -42,7 +47,7 @@ thead {
 }
 
 h1 {
-  border-bottom: 2px solid #eee;
+  border-bottom: 3px solid #eee;
 }
 
 h2 {
@@ -51,7 +56,7 @@ h2 {
 
 p {
   font-family: "Thasadith", sans-serif;
-  background: #eee;
+
   font-size: large;
 }
 
@@ -126,13 +131,16 @@ p {
   position: relative;
   transition: all 5s;
 }
+footer {
+  margin-top: auto 0;
+}
 
 .footer {
   color: darkslategray;
   background-color: rgb(147, 237, 122, 0.56);
   font-weight: 800;
   font-size: medium;
-  position: absolute;
+  position: sticky;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -150,4 +158,10 @@ p {
   color: rgb(233, 35, 41);
   font-style: italic;
   font-size: large;
+}
+
+@media screen {
+  .rounded-lg-3 {
+    border-radius: 0.3rem;
+  }
 }

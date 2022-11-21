@@ -32,7 +32,7 @@ def create_app():
     # admin.add_view(ModelView(Ticket, db.session))
     # admin.add_view(ModelView(Note, db.session))
     # admin.add_view(ModelView(Participant, db.session)) 
-    from .errorHandling import not_found, server_error, bad_request, forbidden, unauthorized, server_down
+    from .views.errorHandling import not_found, server_error, bad_request, forbidden, unauthorized, server_down
     app.register_error_handler(400, bad_request)
     app.register_error_handler(401, unauthorized)
     app.register_error_handler(403, forbidden)
@@ -40,8 +40,9 @@ def create_app():
     app.register_error_handler(500, server_error)
     app.register_error_handler(503, server_down)
 
+    from .views.general import views
     app.register_blueprint(rootView, url_prefix='/')
-    # app.register_blueprint(auth, url_prefix='/')
+    app.register_blueprint(views, url_prefix='/')
     # app.register_blueprint(account, url_prefix='/')
     # app.register_blueprint(MTs, url_prefix='/')
 
@@ -83,8 +84,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.13, status='Initial Development#1.36',
-                         build=20221121, version_note='Remove the secret data in __init__.py as the source code exit in public and reset the git repo to prevent the sensitive data shown in git repo')
+systemInfoObject = About(version=0.132, status='Initial Development#1.4',
+                         build=20221121, version_note='Home page view added')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 
@@ -92,4 +93,3 @@ rootView = Blueprint('rootView', __name__)
 @rootView.route("/..root-template-view/")
 def root_view():
     return render_template("base.html", about=systemInfo)
-

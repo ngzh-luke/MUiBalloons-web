@@ -16,12 +16,17 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../node_modules/bootstrap/scss/bootstrap" />
-    <link rel="stylesheet" href="../node_modules/bootstrap/scss/functions" />
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/scss/functions" /> -->
     <link rel=stylesheet type=text/css href="{{ url_for('static',
     filename='style.css') }}">
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-dark bg-dark fixed-top border-bottom border-info">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">myBalloons</a>
+        <a
+          class="navbar-brand"
+          href="/"
+          style="font-size: 1.5em; color: rgb(229, 227, 91)"
+          >myBalloons</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -169,15 +174,15 @@
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
       crossorigin="anonymous"
     ></script>
-    <br />
-    <br />
+
     <div class="container">
       {% block content %}<a href="/">Click Here To Redirect To HOME Page</a> {%
       endblock %}
     </div>
     <br />
     <br />
-    <footer style="font-weight: bold" class="py-5">
+
+    <footer style="font-weight: bold" class="py-1 pt-4">
       <div class="footer">
         <div
           class="d-flex align-items-center flex-column flex-sm-row justify-content-around py-3"
@@ -189,25 +194,28 @@
                 <br />
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2">
-                    <a href="/" class="nav-link p-0 text-warning">Home</a>
+                    <a href="/login/" class="nav-link p-0 text-danger">Login</a>
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-warning">Dashboard</a>
+                    <a href="/" class="nav-link p-0 text-danger">Home</a>
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-warning"
+                    <a href="#" class="nav-link p-0 text-danger">Dashboard</a>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <a href="#" class="nav-link p-0 text-danger"
                       >iTicketViewer</a
                     >
                   </li>
                   <li class="nav-item mb-2">
-                    <a href="#" class="nav-link p-0 text-warning">About</a>
+                    <a href="#" class="nav-link p-0 text-danger">About</a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
           <div
-            class="d-flex align-items-end flex-column justify-content-around py-1 border-top border-info"
+            class="d-flex align-items-end flex-column justify-content-around py-1 border-top border-warning"
           >
             {% block aboutHeader %}
             <span
@@ -217,9 +225,12 @@
                 font-weight: 900;
                 color: magenta;
               "
-              ><strong>ABOUT myBalloons System</strong></span
+              ><strong>myBalloons System</strong></span
             >
-            {% block about %}{{about}} {% endblock %} <br />
+            {% block about %}<span style="color: rgb(0, 106, 255)"
+              >{{about}}</span
+            >
+            {% endblock %}
             <div>
               Developed by
               <span style="font-style: italic; color: blue"
