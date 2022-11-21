@@ -84,8 +84,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.132, status='Initial Development#1.4',
-                         build=20221121, version_note='Home page view added')
+systemInfoObject = About(version=0.133, status='Initial Development#1.45',
+                         build=20221121, version_note='Dark Theme available for Home page')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 

@@ -59,7 +59,9 @@ p {
 
   font-size: large;
 }
-
+footer {
+  margin-top: auto 0;
+}
 .page {
   margin: 2em auto;
   width: 35em;
@@ -131,13 +133,10 @@ p {
   position: relative;
   transition: all 5s;
 }
-footer {
-  margin-top: auto 0;
-}
 
 .footer {
   color: darkslategray;
-  background-color: rgb(147, 237, 122, 0.56);
+  background-color: rgb(147, 237, 122, 0.65);
   font-weight: 800;
   font-size: medium;
   position: sticky;
