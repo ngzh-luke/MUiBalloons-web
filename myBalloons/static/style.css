@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("../node_modules/bootstrap/scss/bootstrap");
+@import url("../node_modules/bootstrap/scss/functions");
 
 #app {
   -webkit-font-smoothing: antialiased;
@@ -130,6 +132,19 @@ p {
   background-color: rgb(147, 237, 122, 0.56);
   font-weight: 800;
   font-size: medium;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid darkcyan;
+  border-top-style: dotted;
+  border-top-right-radius: 17%;
+  border-bottom-left-radius: 17%;
+  border-spacing: 3px;
+  border-bottom: 2px solid #333bc1;
+  opacity: 1;
+  isolation: isolate;
 }
 .footer .license-link {
   color: rgb(233, 35, 41);

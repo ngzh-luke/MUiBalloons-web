@@ -4,18 +4,28 @@ block content %}
   h3 {
     color: crimson;
   }
+  body {
+    background-image: url({{url_for(
+        "static",
+        filename= "backgrounds/error-bg1.png"
+      )}});
+  }
 </style>
 <br />
 <div align="center">
-  <h3 style="font-size: 2.8em">PAGE FORBIDDEN</h3>
+  <h3 style="font-size: 3.8em; font-style: bold; font-weight: bolder">
+    PAGE FORBIDDEN
+  </h3>
 
   <br />
-  <h5 style="font-size: 1.4em">
+  <h5 style="font-size: 1.4em; font-weight: bold; color: rgb(235, 238, 69)">
     Sorry, You have requested to the page that is forbidden, please try again or
     contact
     <u><i>myBalloons System Administrator</i></u> if you believe this is a
     mistake.
   </h5>
+  <br />
+  <a role="button" class="btn btn-warning" href="/">Back Home</a>
 </div>
 <h6></h6>
 {% endblock %}

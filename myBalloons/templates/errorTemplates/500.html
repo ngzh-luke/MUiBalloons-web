@@ -4,20 +4,30 @@ block content %}
   h3 {
     color: crimson;
   }
+  body {
+    background-image: url({{url_for(
+        "static",
+        filename= "backgrounds/error-bg1.png"
+      )}});
+  }
 </style>
 <br />
 <div align="center">
-  <h3 style="font-size: 2.8em">INTERNAL SERVER ERROR</h3>
+  <h5 style="font-size: 1.4em; font-weight: bold; color: rgb(235, 238, 69)">
+    INTERNAL SERVER ERROR
+  </h3>
 
   <br />
-  <p>Webservice is currently unavailable</p>
+  <p style="color: rgb(238, 207, 69)">Webservice is currently unavailable</p>
   <br />
-  <h5 style="font-size: 1.4em">
+  <h5 style="font-size: 1.4em; font-weight: bold">
     Sorry, We are trying to get the server back online, please try again or
     contact
     <u><i>myBalloons System Administrator</i></u> if you need further
     information.
   </h5>
+  <br />
+  <a role="button" class="btn btn-warning" href="/">Back Home</a>
 </div>
 <h6></h6>
 {% endblock %}
