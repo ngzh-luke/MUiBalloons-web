@@ -14,13 +14,13 @@
 
 # Initial Development#1.3: Navigation bar and footer updated on November 20, 2022 -> 0.12
 
-# Initial Development#1.35: Error page background image added and footer updated on November 21, 2022 -> 0.125
+# Initial Development#2: Error page background image added and footer updated on November 21, 2022 -> 0.125
 
-# Initial Development#1.36: Remove the secret data in **init**.py as the source code exit in public and reset the git repo to prevent the sensitive data shown in git repo on November 21, 2022 -> 0.13
+# Initial Development#2.2: Remove the secret data in **init**.py as the source code exit in public and reset the git repo to prevent the sensitive data shown in git repo on November 21, 2022 -> 0.13
 
-# Initial Development#1.4: Home page view added on November 21, 2022 -> 0.132
+# Initial Development#2.3: Home page view added on November 21, 2022 -> 0.132
 
-# Initial Development#1.45: Dark Theme available for Home page on November 21, 2022 -> 0.133
+# Initial Development#2.4: Dark Theme available for Home page on November 21, 2022 -> 0.133
 
 TO-DO:
 
