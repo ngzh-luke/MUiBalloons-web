@@ -18,6 +18,7 @@ def create_app():
     app.config['SECRET_KEY'] = '' # To be changed to en characters of when deploy
     app.config['DATABASE_NAME'] = DB_NAME
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
     # from .account import account
@@ -62,8 +63,8 @@ def create_app():
         user_datastore = SQLAlchemyUserDatastore(db, User, Role)
         security = Security(app, user_datastore)
 
-    # with app.app_context(): # Drop all of the tables
-    #     db.drop_all()
+    with app.app_context(): # Drop all of the tables
+        db.drop_all()
 
     return app
 
@@ -85,8 +86,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.1351, status='Initial Development#3.1',
-                         build=20221122, version_note='Add links to buttons in home page and contact button added to each error landing pages')
+systemInfoObject = About(version=0.1352, status='Initial Development#3.2',
+                         build=20221122, version_note='Update navbar, sign-up form, and add more database tables')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 

@@ -26,6 +26,8 @@
 
 # Initial Development#3.1: Add links to buttons in home page and contact button added to each error landing pages on November 22, 2022 -> 0.1351
 
+# Initial Development#3.2: Update navbar, sign-up form, and add more database tables on November 22, 2022 -> 0.1352
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]

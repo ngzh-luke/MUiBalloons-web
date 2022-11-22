@@ -8,8 +8,8 @@ auth = Blueprint('auth', __name__)
 @auth.route('/join-us/')
 
 def signUp():
-    return render_template('sign_up.html', systemVersion=systemVersion)
+    return render_template('sign_up.html', systemVersion=systemVersion, about=systemInfo)
 
 @auth.route('/login/')
 def logIn():
-    return render_template('login.html', systemVersion =systemVersion)
+    return render_template('login.html', systemVersion =systemVersion, about=systemInfo)
