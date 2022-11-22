@@ -22,6 +22,8 @@
 
 # Initial Development#2.4: Dark Theme available for Home page on November 21, 2022 -> 0.133
 
+# Initial Development#3: Login and Sign-Up page draft added on November 22, 2022 -> 0.135
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]

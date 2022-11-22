@@ -41,9 +41,10 @@ def create_app():
     app.register_error_handler(503, server_down)
 
     from .views.general import views
+    from .views.authen import auth
     app.register_blueprint(rootView, url_prefix='/')
     app.register_blueprint(views, url_prefix='/')
-    # app.register_blueprint(account, url_prefix='/')
+    app.register_blueprint(auth, url_prefix='/')
     # app.register_blueprint(MTs, url_prefix='/')
 
     with app.app_context():
@@ -84,8 +85,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.133, status='Initial Development#1.45',
-                         build=20221121, version_note='Dark Theme available for Home page')
+systemInfoObject = About(version=0.135, status='Initial Development#3',
+                         build=20221122, version_note='Login and Sign-Up page draft added')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 

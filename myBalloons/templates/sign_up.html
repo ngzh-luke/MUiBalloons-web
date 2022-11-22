@@ -1,2 +1,166 @@
-{% extends 'base.html' %} {% block title %}HOME | myBalloons{% endblock %}{%
-block content %} {% endblock %}
+{% extends 'base.html' %} {% block title %}SIGN-UP | myBalloons{% endblock %}{%
+block content %}
+<style>
+  .form-popup {
+    display: none;
+  }
+</style>
+<br />
+
+<div class="pt-5 mb-2">
+  <ul>
+    <li value="*">
+      Already have <u>Balloons Account</u>, please
+      <a href="/login"><strong>Login!</strong></a>
+    </li>
+    <li>
+      Need help? Contact us via:
+      <a href="mailto:mu.iballoons@outlook.com"><i>Email</i></a>
+    </li>
+  </ul>
+
+  <br />
+  <form method="POST" class="mb-3">
+    <h1 style="font-weight: bold" align="center">Sign-Up</h1>
+    <h2 style="font-weight: bold" align="center">
+      myBalloons v{{systemVersion}}
+    </h2>
+    <div class="form-group mb-3">
+      <label for="email"><span style="color: red">*</span> Email Address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        required
+        placeholder="example@muiballoons.com"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="firstName"
+        ><span style="color: red">*</span> First Name</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        required
+        placeholder="Your first Name"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="password1"><span style="color: red">*</span> Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password1"
+        name="password1"
+        placeholder="Enter password"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="password2"
+        ><span style="color: red">*</span> Confirm Password</label
+      >
+      <input
+        type="password"
+        class="form-control"
+        id="password2"
+        name="password2"
+        placeholder="Confirm password"
+      />
+    </div>
+    <label for="master-key-opener">
+      (For System Admin registration Only):</label
+    >
+    &ensp;
+    <button
+      name="master-key-opener"
+      type="button"
+      class="btn btn-secondary"
+      onclick="MasterKeyform()"
+    >
+      Show/Hide
+    </button>
+    <div class="form-popup mb-3" id="master-key" align="center">
+      <label for="mk"> Master Key</label>
+      <input
+        type="password"
+        class="form-control"
+        id="mk"
+        name="mk"
+        maxlength="8"
+        placeholder="Type master key in here"
+      />
+    </div>
+    <br />
+    <label for="security-question-opener"
+      ><span style="color: red">*</span> Security Question:</label
+    >
+    &ensp;
+    <button
+      name="security-question-opener"
+      type="button"
+      class="btn btn-secondary"
+      onclick="Questionform()"
+    >
+      Show/Hide
+    </button>
+    <div class="form-popup mb-3" id="question-form">
+      <label for="security-question"> Custom Security Question</label>
+      <input
+        type="text"
+        class="form-control"
+        id="security-question"
+        name="security_question"
+        placeholder="Type custom security question in here"
+        onkeyup="readQuestion()"
+        required
+        aria-placeholder="Where is your mother's hometown?"
+      />
+      <small>Ex. Where is your mother's hometown?</small><br />
+      <label for="security_question_review">Security Question Selected: </label>
+      <input
+        type="text"
+        class="form-control"
+        id="security-question-review"
+        name="security_question_review"
+        value=""
+        disabled
+      />
+    </div>
+    <br />
+    <div align="center">
+      <button type="submit" class="btn btn-primary">Sign-Up!</button>
+    </div>
+    <span style="color: red"
+      ><small>* = <u>Required</u></small></span
+    >
+  </form>
+</div>
+<script>
+  function MasterKeyform() {
+    var isShow = document.getElementById("master-key");
+    if (isShow.style.display === "block") {
+      isShow.style.display = "none";
+    } else {
+      isShow.style.display = "block";
+    }
+    //document.getElementsByID("master-key").style.visibility = "visible";
+  }
+  function Questionform() {
+    var isShow = document.getElementById("question-form");
+    if (isShow.style.display === "block") {
+      isShow.style.display = "none";
+    } else {
+      isShow.style.display = "block";
+    }
+  }
+  function readQuestion() {
+    document.getElementById("security-question-review").value =
+      document.getElementById("security-question").value;
+  }
+</script>
+
+{% endblock %}
