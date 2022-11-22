@@ -135,3 +135,5 @@ myBalloons_env/
 # database
 .instance
 instance/
+
+.DS_Store
