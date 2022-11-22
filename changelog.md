@@ -24,9 +24,12 @@
 
 # Initial Development#3: Login and Sign-Up page draft added on November 22, 2022 -> 0.135
 
+# Initial Development#3.1: Add links to buttons in home page and contact button added to each error landing pages on November 22, 2022 -> 0.1351
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]
 - Login and Signup pages [Expect to start at v0.135 and Expect to working at v0.14]
 - Home page (Partially [DONE] -> shown texts needed to revised if needed)
 - Admin&User Dashboard [Expect to start at v0.142]
+- iTicketViewer

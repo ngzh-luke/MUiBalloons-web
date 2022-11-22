@@ -85,8 +85,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.135, status='Initial Development#3',
-                         build=20221122, version_note='Login and Sign-Up page draft added')
+systemInfoObject = About(version=0.1351, status='Initial Development#3.1',
+                         build=20221122, version_note='Add links to buttons in home page and contact button added to each error landing pages')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 
