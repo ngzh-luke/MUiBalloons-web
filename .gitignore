@@ -137,3 +137,6 @@ myBalloons_env/
 instance/
 
 .DS_Store
+
+# Running config (.json)
+.vscode

@@ -28,6 +28,10 @@
 
 # Initial Development#3.2: Update navbar, sign-up form, and add more database tables on November 22, 2022 -> 0.1352
 
+# Initial Development#4: Change the app config (secret_key) with the value of env var on November 23, 2022 -> 0.1353
+
+# Initial Development#4.2: User Role draft implemented, other bugs fixed, and Login System(Sign-Up, Login, Logout) works on November 23, 2022 -> 0.136
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]

@@ -3,29 +3,36 @@ from flask_admin.contrib.sqla import ModelView
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 from flask_admin import Admin, BaseView, expose
-from flask_security import SQLAlchemyUserDatastore, Security
-from flask_login import LoginManager
+# from flask_security import Security, SQLAlchemyUserDatastore
+from flask_bcrypt import Bcrypt, generate_password_hash
+from flask_login import LoginManager, current_user
 from flask import Flask, Blueprint, render_template
-from .database import User, Role
-import os
-
+from .models import User, Role
+from decouple import config as en_var # import the environment var
 
 DB_NAME = "myBalloons_database.sqlite"
 
 def create_app():
     app = Flask(__name__)
+    f_bcrypt = Bcrypt(app)
     app.config['FLASK_ADMIN-SWATCH'] = 'cerulean'
-    app.config['SECRET_KEY'] = '' # To be changed to en characters of when deploy
+    app.config['SECRET_KEY'] = en_var('myBalloonsAppSecretKey') # Encrepted with Environment Variable
     app.config['DATABASE_NAME'] = DB_NAME
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['TIMEZONE'] = 'Asia/Bangkok'
+    # app.config['SECURITY_TRACKABLE'] = True
+    # app.config['SECURITY_CONFIRMABLE'] = True
+    # app.config['SECURITY_REGISTER_URL'] = '/sign-up/'
+    # app.config['SECURITY_LOGIN_URL'] = '/login/'
+    # app.config['SECURITY_LOGOUT_URL'] = '/logout/'
+    # app.config['SECURITY_RESET_URL'] = ''
+    
     db.init_app(app)
 
     # from .account import account
     
-    # from .auth import auth
     # from .master_tools import MTs
-    # from .models import User, Participant, Ticket, Login_log, Note
 
     # admin = Admin(app, name='MU iBalloons Database Manager', template_mode='bootstrap3')
     # admin.add_view(ModelView(User, db.session))
@@ -43,28 +50,53 @@ def create_app():
 
     from .views.general import views
     from .views.authen import auth
+    from .views.dashboard_admin import admin_dashboard
+    from .views.dashboard_user import user_dashboard
     app.register_blueprint(rootView, url_prefix='/')
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
-    # app.register_blueprint(MTs, url_prefix='/')
+    app.register_blueprint(admin_dashboard, url_prefix='/')
+    app.register_blueprint(user_dashboard, url_prefix='/')
+
+    with app.app_context(): # Drop all of the tables
+        db.drop_all()
 
     with app.app_context():
         db.create_all()
 
+
+    @app.before_first_request
+    def demo_account():
+        createAdminRole = Role(id=1,name="admin")
+        createUserRole = Role(id=0,name="user")
+        db.session.add_all([createAdminRole, createUserRole])
+        db.session.commit()
+        d1 = User(email="demo@admin.com", fname="Admin", lname="Admin Lastname", password=generate_password_hash("admin").decode('utf-8'))
+        d2 = User(email='demo@user.com',fname="User", lname="User Lastname", password=generate_password_hash("user").decode('utf-8'))    
+        db.session.add_all([d1, d2])
+        db.session.commit()
+
     login_manager = LoginManager()
-    login_manager.login_view = 'auth.login'
+    login_manager.login_view = 'auth.logIn'
     login_manager.init_app(app)
 
     @login_manager.user_loader
     def load_user(id):
         return User.query.get(int(id))
 
-    # Setup Flask-Security
-        user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-        security = Security(app, user_datastore)
+    # # Setup Flask-Security
+    # user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+    # security = Security(app, user_datastore)
+    
+    
+    # @app.before_first_request
+    # def create_user():
+    #     db.create_all()
+    #     user_datastore.create_user(email='matt@nobien.net', password='password')
+    #     db.session.commit()
 
-    with app.app_context(): # Drop all of the tables
-        db.drop_all()
+
+
 
     return app
 
@@ -86,12 +118,14 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.1352, status='Initial Development#3.2',
-                         build=20221122, version_note='Update navbar, sign-up form, and add more database tables')
+systemInfoObject = About(version=0.136, status='Initial Development#4.2',
+                         build=20221123, version_note='User Role draft implemented, other bugs fixed, and Login System(Sign-Up, Login, Logout) works')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 
 rootView = Blueprint('rootView', __name__)
 @rootView.route("/..root-template-view/")
 def root_view():
-    return render_template("base.html", about=systemInfo)
+    return render_template("base.html", about=systemInfo, user=current_user)
+
+# Initial Development#4.2: User Role draft implemented, other bugs fixed, and Login System(Sign-Up, Login, Logout) works on November 23, 2022 -> 0.136
