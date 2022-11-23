@@ -9,6 +9,5 @@ Please check the LICENSE.md for details.
 # For development history please check changelog.md
 
 Current Status: **Initial Development**
-Current Version: **0.136**
-Updated: **November 23, 2022**
-
+Current Version: **0.138**
+Updated: **November 24, 2022**

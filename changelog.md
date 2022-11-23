@@ -32,10 +32,12 @@
 
 # Initial Development#4.2: User Role draft implemented, other bugs fixed, and Login System(Sign-Up, Login, Logout) works on November 23, 2022 -> 0.136
 
+# Initial Beta#1: Complete Admin-User-Guest Permission restrictions, and overall improvements on November 24, 2022 -> 0.138
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]
-- Login and Signup pages [Expect to start at v0.135 and Expect to working at v0.14]
+- Login and Signup pages [DONE]
 - Home page (Partially [DONE] -> shown texts needed to revised if needed)
 - Admin&User Dashboard [Expect to start at v0.142]
 - iTicketViewer

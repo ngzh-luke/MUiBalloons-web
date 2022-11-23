@@ -2,13 +2,14 @@
 from flask_admin.contrib.sqla import ModelView
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
-from flask_admin import Admin, BaseView, expose
+# from flask_admin import Admin, BaseView, expose
 # from flask_security import Security, SQLAlchemyUserDatastore
 from flask_bcrypt import Bcrypt, generate_password_hash
 from flask_login import LoginManager, current_user
-from flask import Flask, Blueprint, render_template
-from .models import User, Role
+from flask import Flask, Blueprint, render_template, abort, flash
+from .models import User, TheKeys
 from decouple import config as en_var # import the environment var
+from werkzeug.exceptions import HTTPException
 
 DB_NAME = "myBalloons_database.sqlite"
 
@@ -67,14 +68,21 @@ def create_app():
 
     @app.before_first_request
     def demo_account():
-        createAdminRole = Role(id=1,name="admin")
-        createUserRole = Role(id=0,name="user")
-        db.session.add_all([createAdminRole, createUserRole])
-        db.session.commit()
-        d1 = User(email="demo@admin.com", fname="Admin", lname="Admin Lastname", password=generate_password_hash("admin").decode('utf-8'))
-        d2 = User(email='demo@user.com',fname="User", lname="User Lastname", password=generate_password_hash("user").decode('utf-8'))    
-        db.session.add_all([d1, d2])
-        db.session.commit()
+        # createAdminRole = Role(id=1,name="admin")
+        # createUserRole = Role(id=0,name="user")
+        # db.session.add_all([createAdminRole, createUserRole])
+        # db.session.commit()
+        try:
+
+            k1 = TheKeys(key='master')
+            k2 = TheKeys(key='admin')
+            d1 = User(email="demo@admin.com", fname="Admin", lname="Admin Lastname", password=generate_password_hash("admin").decode('utf-8'), role_level=1, s_question='question', s_answer='answer')
+            d2 = User(email='demo@user.com',fname="User", lname="User Lastname", password=generate_password_hash("user").decode('utf-8'),s_question='question', s_answer='answer')    
+            db.session.add_all([k1,k2,d1, d2])
+            db.session.commit()
+        except Exception as e:
+            flash(f'{e}', category='error')
+            
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.logIn'
@@ -118,8 +126,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.136, status='Initial Development#4.2',
-                         build=20221123, version_note='User Role draft implemented, other bugs fixed, and Login System(Sign-Up, Login, Logout) works')
+systemInfoObject = About(version=0.138, status='Initial Beta#1',
+                         build=20221124, version_note='Complete Admin-User-Guest Permission restrictions, and overall improvements')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 
@@ -128,4 +136,4 @@ rootView = Blueprint('rootView', __name__)
 def root_view():
     return render_template("base.html", about=systemInfo, user=current_user)
 
-# Initial Development#4.2: User Role draft implemented, other bugs fixed, and Login System(Sign-Up, Login, Logout) works on November 23, 2022 -> 0.136
+# Initial Beta#1: Complete Admin-User-Guest Permission restrictions, and overall improvements on November 24, 2022 -> 0.138
