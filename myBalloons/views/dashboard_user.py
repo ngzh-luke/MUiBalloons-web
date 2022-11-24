@@ -7,10 +7,10 @@ user_dashboard = Blueprint('user_dashboard', __name__)
 
 @user_dashboard.route('/dashboard')
 @login_required
-def userDashboardURL():
+def userDashboardURL(): # level = 0
     return redirect(url_for('user_dashboard.userDashboard', user_id=current_user.id))
 
 @user_dashboard.route('/<int:user_id>/dashboard/')
 @login_required
-def userDashboard(user_id):
+def userDashboard(user_id): # level = 0
     return render_template('dashboard_user.html', about=systemInfo, user=current_user)

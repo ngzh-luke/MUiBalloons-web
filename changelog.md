@@ -38,6 +38,8 @@
 
 # Initial Development#5: Sign-up form view customized, iTicketViewer interface added, and added brief login credential on navbar and navbar menu on Novenber 24, 2022 -> 0.142
 
+# Initial Development#5.1: Update BootStrap version from **"5.2.2"** to **"5.2.3"**, make a draft of the page and add page restriction on Admin Dashboard, other improvements on November 25, 2022 -> 0.143
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]

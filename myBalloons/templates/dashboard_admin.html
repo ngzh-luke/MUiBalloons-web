@@ -1,6 +1,27 @@
 {% extends 'base.html' %} {% block title %}Admin Dashboard | myBalloons{%
 endblock %}{% block content %}
 
-<div class="pt-5"><h1>This is Admin Dashboard</h1></div>
+<div class="pt-5" align="end"><h1>Admin Dashboard</h1></div>
+<p align="end">A Perfect Tool to Manage "Admin Stuff"</p>
+
+<div class="justify-content-between my-2 mx-2 px-2 py-2" align="center">
+  <div class="border border-info border-3 rounded-2">
+    *****
+    <div class="hstack gap-1 py-2 px-1">
+      <div class="" align="center">
+        <div class="vstack gap-3 mx-2 border border-2 border-warning rounded-2">
+          <h3>Account</h3>
+          <img
+            src="https://ui-avatars.com/api/?name={{user.fname}}+{{user.lname}}&color=3e79de&size=256"
+            class="img-thumbnail d-block"
+            alt="..."
+          />
+          <div>First Name</div>
+          <div>Last Name</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}

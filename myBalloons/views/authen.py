@@ -14,7 +14,7 @@ auth = Blueprint('auth', __name__)
 def logOut():
     logout_user()
     time.sleep(0.2)
-    return render_template('logout.html', user=current_user)
+    return render_template('logout.html', user=current_user,systemVersion=systemVersion)
 
 @auth.route('/login/', methods=["POST", "GET"])
 def logIn():

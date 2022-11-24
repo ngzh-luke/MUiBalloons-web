@@ -22,12 +22,12 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['TIMEZONE'] = 'Asia/Bangkok'
-    # app.config['SECURITY_TRACKABLE'] = True
+    """ # app.config['SECURITY_TRACKABLE'] = True
     # app.config['SECURITY_CONFIRMABLE'] = True
     # app.config['SECURITY_REGISTER_URL'] = '/sign-up/'
     # app.config['SECURITY_LOGIN_URL'] = '/login/'
     # app.config['SECURITY_LOGOUT_URL'] = '/logout/'
-    # app.config['SECURITY_RESET_URL'] = ''
+    # app.config['SECURITY_RESET_URL'] = '' """
     
     db.init_app(app)
 
@@ -35,12 +35,12 @@ def create_app():
     
     # from .master_tools import MTs
 
-    # admin = Admin(app, name='MU iBalloons Database Manager', template_mode='bootstrap3')
+    """ # admin = Admin(app, name='MU iBalloons Database Manager', template_mode='bootstrap3')
     # admin.add_view(ModelView(User, db.session))
     # admin.add_view(ModelView(Login_log, db.session))
     # admin.add_view(ModelView(Ticket, db.session))
     # admin.add_view(ModelView(Note, db.session))
-    # admin.add_view(ModelView(Participant, db.session)) 
+    # admin.add_view(ModelView(Participant, db.session))  """
     from .views.errorHandling import not_found, server_error, bad_request, forbidden, unauthorized, server_down
     app.register_error_handler(400, bad_request)
     app.register_error_handler(401, unauthorized)
@@ -68,10 +68,6 @@ def create_app():
 
     @app.before_first_request
     def demo_account():
-        # createAdminRole = Role(id=1,name="admin")
-        # createUserRole = Role(id=0,name="user")
-        # db.session.add_all([createAdminRole, createUserRole])
-        # db.session.commit()
         try:
 
             k1 = TheKeys(key='master')
@@ -92,7 +88,7 @@ def create_app():
     def load_user(id):
         return User.query.get(int(id))
 
-    # # Setup Flask-Security
+    """ # # Setup Flask-Security
     # user_datastore = SQLAlchemyUserDatastore(db, User, Role)
     # security = Security(app, user_datastore)
     
@@ -101,8 +97,7 @@ def create_app():
     # def create_user():
     #     db.create_all()
     #     user_datastore.create_user(email='matt@nobien.net', password='password')
-    #     db.session.commit()
-
+    #     db.session.commit() """
 
 
 
@@ -126,8 +121,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.142, status='Initial Development#5',
-                         build=20221124, version_note='Sign-up form view customized, iTicketViewer interface added, and added brief login credential on navbar and navbar menu')
+systemInfoObject = About(version=0.143, status='Initial Development#5.1',
+                         build=20221125, version_note='Update BootStrap version from **"5.2.2"** to **"5.2.3"**, make a draft of the page and add page restriction on Admin Dashboard, other improvements')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 
@@ -136,4 +131,4 @@ rootView = Blueprint('rootView', __name__)
 def root_view():
     return render_template("base.html", about=systemInfo, user=current_user)
 
-# Initial Development#5: Sign-up form view customized, iTicketViewer interface added, and added brief login credential on navbar and navbar menu on Novenber 24, 2022 -> 0.142
+# Initial Development#5.1: Update BootStrap version from **"5.2.2"** to **"5.2.3"**, make a draft of the page and add page restriction on Admin Dashboard, other improvements on November 25, 2022 -> 0.143
