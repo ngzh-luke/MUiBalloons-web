@@ -126,73 +126,77 @@ block content %}
     <div class="form-popup mb-3" id="question-form">
       <br />
       <div class="form-control" style="background-color: rgb(0, 0, 255, 0.2)">
-        <label for="security-question" style="font-weight: bold">
-          Custom Security Question</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="security-question"
-          name="security_question"
-          placeholder="Type custom security question in here"
-          onkeyup="readQuestion()"
-          required
-          aria-placeholder="Where is your mother's hometown?"
-        />
-        <small>Ex. Where is your mother's hometown?</small><br />
-        <label
-          for="security_question_review"
-          style="color: rgb(221, 128, 57); font-weight: bolder"
-          >Security Question Selected:
-        </label>
-        <input
-          type="text"
-          class="form-control"
-          id="security-question-review"
-          name="security_question_review"
-          value=""
-          disabled
-        /><small
-          ><span style="color: green"
-            >Selected values are mark within quotation marks ("") &ensp;Ex. If
-            the values are 'This is an answer.', It will be shown as "This is an
-            answer."</span
+        <div class="hstack gap-3">
+          <label for="security-question" style="font-weight: bold">
+            Custom Security Question</label
           >
-        </small>
+          <input
+            type="text"
+            class="form-control"
+            id="security-question"
+            name="security_question"
+            placeholder="Type custom security question in here"
+            onkeyup="readQuestion()"
+            required
+            aria-placeholder="Where is your mother's hometown?"
+          />
+          <small>Ex. Where is your mother's hometown?</small><br />
+          <label
+            for="security_question_review"
+            style="color: rgb(221, 128, 57); font-weight: bolder"
+            >Security Question Selected:
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="security-question-review"
+            name="security_question_review"
+            value=""
+            disabled
+          /><small
+            ><span style="color: green"
+              >Selected values are mark within quotation marks ("") &ensp;Ex. If
+              the values are 'This is an answer.', It will be shown as "This is
+              an answer."</span
+            >
+          </small>
+        </div>
         <br />
-        <label for="security-question-answer" style="font-weight: bold">
-          Answer for Custom Security Question</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="security-question-answer"
-          name="security_question_answer"
-          placeholder="Type answer for your custom security question in here"
-          onkeyup="readAnswer()"
-          required
-          aria-placeholder="Somewhere on Earth!"
-        />
-        <small>Ex. Somewhere on Earth</small><br />
-        <label
-          for="security_question_answer_review"
-          style="color: rgb(221, 128, 57); font-weight: bolder"
-          >Answer for Security Question Selected:
-        </label>
-        <input
-          type="text"
-          class="form-control"
-          id="security-question-answer-review"
-          name="security_question_answer_review"
-          value=""
-          disabled
-        /><small
-          ><span style="color: green"
-            >Selected values are mark within quotation marks ("") &ensp;Ex. If
-            the values are 'This is an answer.', It will be shown as "This is an
-            answer."</span
+        <div class="hstack gap-3">
+          <label for="security-question-answer" style="font-weight: bold">
+            Answer for Custom Security Question</label
           >
-        </small>
+          <input
+            type="text"
+            class="form-control"
+            id="security-question-answer"
+            name="security_question_answer"
+            placeholder="Type answer for your custom security question in here"
+            onkeyup="readAnswer()"
+            required
+            aria-placeholder="Somewhere on Earth!"
+          />
+          <small>Ex. Somewhere on Earth</small><br />
+          <label
+            for="security_question_answer_review"
+            style="color: rgb(221, 128, 57); font-weight: bolder"
+            >Answer for Security Question Selected:
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="security-question-answer-review"
+            name="security_question_answer_review"
+            value=""
+            disabled
+          /><small
+            ><span style="color: green"
+              >Selected values are mark within quotation marks ("") &ensp;Ex. If
+              the values are 'This is an answer.', It will be shown as "This is
+              an answer."</span
+            >
+          </small>
+        </div>
       </div>
     </div>
     <br />

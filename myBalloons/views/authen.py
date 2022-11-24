@@ -74,11 +74,7 @@ def signUp():
             flash('Password don\'t match!', category='error')
         elif len(password1) < 7:
             flash('Password must be at least 8 character.', category='error')
-        # elif (theKey == None or k == None) or (k.is_applied is True) or k.key != theKey: # Master Key is incorrect
-        #    flash('Master Key is incorrect! If you are not applying for admin role account, please leave the master key field blank', category='error')
-        
         elif k != None and theKey != None:
-
             if k.key == theKey and (k.is_applied is False): # Master Key is correct
                 flash('You are creating the account that has admin role.', category='info')
                 try:
@@ -89,18 +85,14 @@ def signUp():
                     db.session.add(new_user)
                     db.session.commit()
                     k.is_applied = True
-                    # db.session.delete(k)
                     db.session.commit()
-                    # key_to_update = TheKeys(key=key_to_update, is_applied=True)
-                    # db.session.add(key_to_update)
-                    # db.session.commit()
                     flash('Account created successfully!', category='success')
                     return redirect(url_for('auth.logIn'))
                 except:
                     flash('There is a problem updating the data, please try again later', category='error')
                     abort(500)
-    
-            
+            elif (k.is_applied is True) or k.key != theKey: # Master Key is incorrect
+                flash('Master Key is incorrect! If you are not applying for admin role account, please leave the master key field blank', category='error')
         else:
             try:
                 new_user = User(email =email, fname = firstName, 

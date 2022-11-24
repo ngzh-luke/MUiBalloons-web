@@ -29,6 +29,19 @@
           style="font-size: 1.5em; color: rgb(229, 227, 91)"
           >myBalloons</a
         >
+        <div class="align-self-center">
+          {% if user.is_authenticated %}
+          <h5 style="color: white">
+            Logged in as
+            <span style="color: rgb(42, 195, 101)">
+              <i><u>{{user.fname}}</u></i>
+              <strong>({{user.__str__()}})</strong></span
+            >
+          </h5>
+          {% else %}
+          <h5 style="color: red">Not Logged in</h5>
+          {% endif %}
+        </div>
         <ul class="navbar-nav flex-row ml-md-auto d-inline-flex">
           &ensp; &ensp; {% if not user.is_authenticated %}
           <li class="nav-item">
@@ -127,6 +140,7 @@
               aria-label="Close"
             ></button>
           </div>
+
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
@@ -190,6 +204,44 @@
               />
               <button class="btn btn-success" type="submit">Search</button>
             </form>
+          </div>
+          <div
+            class="border-3 border-bottom border-top border-danger pb-1 mb-4 mt-2 pt-3"
+          >
+            <div class="align-self-end px-5">
+              <h5 style="color: yellowgreen; font-weight: bold">
+                Account INFO:
+              </h5>
+            </div>
+            <br />
+            <div class="align-self-center pb-4 px-4">
+              {% if user.is_authenticated %}
+              <div class="row">
+                <h5 style="color: white">
+                  Logged in as
+                  <span style="color: rgb(42, 195, 101)">
+                    <i>{{user.fname}}</i>
+                    <strong>({{user.__str__()}})</strong></span
+                  >
+                </h5>
+              </div>
+              <div class="row">
+                <h5 style="color: white">
+                  Role:
+                  <span style="color: rgb(42, 195, 101)">
+                    {{user.roleRepr}}
+                  </span>
+                </h5>
+              </div>
+              {% else %}
+              <h5 style="color: red">Not Logged in</h5>
+              {% endif %}<br />
+              <!-- <span class="border border-4 border-light border-bottom"></span> -->
+              <!-- <hr
+                class="pt-2 px-1 py-1"
+                style="color: red; height: 80%; width: auto; border-width: 3"
+              /> -->
+            </div>
           </div>
         </div>
       </div>
@@ -283,22 +335,24 @@
     </div>
     <br />
     <br />
-    <div class="align-self-end">
-      <a type="button" class="btn btn-primary" href="#">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-caret-up-square-fill"
-          viewBox="0 0 16 16"
+    <div class="d-flex justify-content-end">
+      <div class="align-self-center">
+        <a type="button" class="btn btn-primary" href="#">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-caret-up-square-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11z"
+            />
+          </svg>
+          Back to Top</a
         >
-          <path
-            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 9h8a.5.5 0 0 0 .374-.832l-4-4.5a.5.5 0 0 0-.748 0l-4 4.5A.5.5 0 0 0 4 11z"
-          />
-        </svg>
-        Back to Top</a
-      >
+      </div>
     </div>
     <footer style="font-weight: bold" class="py-1 pt-4">
       <div class="footer">

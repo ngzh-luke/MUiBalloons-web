@@ -1,5 +1,5 @@
 # Root file of the system
-from flask_admin.contrib.sqla import ModelView
+# from flask_admin.contrib.sqla import ModelView
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 # from flask_admin import Admin, BaseView, expose
@@ -9,7 +9,7 @@ from flask_login import LoginManager, current_user
 from flask import Flask, Blueprint, render_template, abort, flash
 from .models import User, TheKeys
 from decouple import config as en_var # import the environment var
-from werkzeug.exceptions import HTTPException
+# from werkzeug.exceptions import HTTPException
 
 DB_NAME = "myBalloons_database.sqlite"
 
@@ -126,8 +126,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.14, status='Initial Fixed#1',
-                         build=20221124, version_note='Fix bugs at sign-up where master key is not accepting None type, iTicketViewer added, and others improvements')
+systemInfoObject = About(version=0.142, status='Initial Development#5',
+                         build=20221124, version_note='Sign-up form view customized, iTicketViewer interface added, and added brief login credential on navbar and navbar menu')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 
@@ -136,4 +136,4 @@ rootView = Blueprint('rootView', __name__)
 def root_view():
     return render_template("base.html", about=systemInfo, user=current_user)
 
-# Initial Fixed#1: Fix bugs at sign-up where master key is not accepting None type, iTicketViewer added, and others improvements on November 24, 2022 -> 0.14
+# Initial Development#5: Sign-up form view customized, iTicketViewer interface added, and added brief login credential on navbar and navbar menu on Novenber 24, 2022 -> 0.142

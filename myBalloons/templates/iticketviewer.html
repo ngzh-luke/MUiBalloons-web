@@ -1,4 +1,4 @@
-% extends "base.html" %} {% block title %}iTicketViewer | myBalloons{% endblock
+{% extends "base.html" %} {% block title %}iTicketViewer | myBalloons{% endblock
 %} {% block content %}
 <br />
 <h1 style="font-weight: bold" align="center">
@@ -7,52 +7,62 @@
 <h2 style="font-weight: bold" align="center">iTicketViewer v0.1</h2>
 <br />
 
-<div align="center">
-  <form method="POST" class="form-inline" action="">
-    <label for="ticket-search-by-code">Ticket Code:</label>&ensp;
-    <input
-      type="text"
-      name="ticket-search-by-code"
-      id="ticket-search-by-code"
-      placeholder="Type in ticket code here"
-      class="form-control-lg"
-      maxlength="10"
-    />
+<div class="d-flex justify-content-center">
+  <div align="center" class="align-self-center px-1 py-1">
+    <form method="POST" class="hstack gap-3" action="">
+      <label for="ticket-search-by-code">Ticket Code:</label>
+      <input
+        type="text"
+        name="ticket-search-by-code"
+        id="ticket-search-by-code"
+        placeholder="Type in ticket code here"
+        class="form-control-lg"
+        maxlength="10"
+      />
 
-    &nbsp; <br />&ensp;
-    <aside>
-      <button type="reset" class="btn btn-secondary">Reset</button> &ensp;&nbsp;
+      <button type="reset" class="btn btn-secondary">Reset</button>
+      <div class="vr"></div>
+      &nbsp;
       <button type="submit" class="btn btn-primary">Search Now!</button>
-    </aside>
-    <br />
-  </form>
+
+      <br />
+    </form>
+  </div>
 </div>
-
-{% endblock %}
-
-<!-- 
-<div class="login-result">
+<div class="d-flex justify-content-center mx-2 my-2 px-2 py-2">
+  <div class="tiket-search-result">
     <table class="table table-dark">
-        <thead>
+      <thead>
         <tr>
-            <th scope="col">Login Global#</th>
-            <th scope="col">Login Local#</th>
-            <th scope="col">Log</th>
-            <th scope="col">User</th>
-            
+          <th scope="col">No.</th>
+          <th scope="col">Ticket ID</th>
+          <th scope="col">Ticket Code</th>
+          <th scope="col">Issued By</th>
+          <th scope="col">Applied</th>
+          <th scope="col">Applied Date</th>
+          <th scope="col">Expiration Date</th>
         </tr>
-        </thead>
-        <tbody>
-        {% for log in user.sign_in_log %}
+      </thead>
+      <tbody>
+        <!-- {% for log in user.sign_in_log %} -->
+        Data
         <tr>
-            <th scope="row">{{log.sign_in_global_counter}}</th>
-            <td>{{log.sign_in_local_counter}}</td>
-            <td>{{log.log}}</td>
-            <td>{{log.user_id}}</td>
-            
+          <!-- <th scope="row">{{log.sign_in_global_counter}}</th>
+          <td>{{log.sign_in_local_counter}}</td>
+          <td>{{log.log}}</td>
+          <td>{{log.user_id}}</td> -->
+          <th scope="row">Data1</th>
+          <td>Data2</td>
+          <td>Data3</td>
+          <td>Data4</td>
+          <td>Data5</td>
+          <td>Data6</td>
+          <td>Data7</td>
         </tr>
-       
-        {% endfor %}
-        </tbody>
+
+        <!-- {% endfor %} -->
+      </tbody>
     </table>
-</div> -->
+  </div>
+</div>
+{% endblock %}

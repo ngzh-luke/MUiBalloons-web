@@ -36,6 +36,8 @@
 
 # Initial Fixed#1: Fix bugs at sign-up where master key is not accepting None type, iTicketViewer added, and others improvements on November 24, 2022 -> 0.14
 
+# Initial Development#5: Sign-up form view customized, iTicketViewer interface added, and added brief login credential on navbar and navbar menu on Novenber 24, 2022 -> 0.142
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]
