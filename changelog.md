@@ -44,3 +44,5 @@ TO-DO:
 - Admin&User Dashboard [Expect to start at v0.142]
 - iTicketViewer
 - Add page restriction to all that needed
+- Notification System
+- Profile (Avatar) System
