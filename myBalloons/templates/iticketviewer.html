@@ -1,0 +1,58 @@
+% extends "base.html" %} {% block title %}iTicketViewer | myBalloons{% endblock
+%} {% block content %}
+<br />
+<h1 style="font-weight: bold" align="center">
+  MU iBalloons Ticket Information
+</h1>
+<h2 style="font-weight: bold" align="center">iTicketViewer v0.1</h2>
+<br />
+
+<div align="center">
+  <form method="POST" class="form-inline" action="">
+    <label for="ticket-search-by-code">Ticket Code:</label>&ensp;
+    <input
+      type="text"
+      name="ticket-search-by-code"
+      id="ticket-search-by-code"
+      placeholder="Type in ticket code here"
+      class="form-control-lg"
+      maxlength="10"
+    />
+
+    &nbsp; <br />&ensp;
+    <aside>
+      <button type="reset" class="btn btn-secondary">Reset</button> &ensp;&nbsp;
+      <button type="submit" class="btn btn-primary">Search Now!</button>
+    </aside>
+    <br />
+  </form>
+</div>
+
+{% endblock %}
+
+<!-- 
+<div class="login-result">
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Login Global#</th>
+            <th scope="col">Login Local#</th>
+            <th scope="col">Log</th>
+            <th scope="col">User</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        {% for log in user.sign_in_log %}
+        <tr>
+            <th scope="row">{{log.sign_in_global_counter}}</th>
+            <td>{{log.sign_in_local_counter}}</td>
+            <td>{{log.log}}</td>
+            <td>{{log.user_id}}</td>
+            
+        </tr>
+       
+        {% endfor %}
+        </tbody>
+    </table>
+</div> -->

@@ -1,6 +1,23 @@
+{% extends 'base.html' %} {% block title %} LOGOUT | myBalloons {% endblock %}
+{% block content %}
 <br />
 <br />
 <br />
 <br />
 <h1>YOU HAVE SUCCESSFULLY LOGGED OUT</h1>
 <a href="/">Click Here To Redirect To HOME Page</a>
+
+<script>
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+  sleep(100);
+  let agree = "SUCCESSFULLY LOGGED OUT\nRedirect to HOME page? \n\tOK = Yes";
+  if (confirm(agree) == true) {
+    window.location.href = "/";
+  } else {
+    pass;
+  }
+</script>
+
+{% endblock %}

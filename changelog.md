@@ -34,6 +34,8 @@
 
 # Initial Beta#1: Complete Admin-User-Guest Permission restrictions, and overall improvements on November 24, 2022 -> 0.138
 
+# Initial Fixed#1: Fix bugs at sign-up where master key is not accepting None type, iTicketViewer added, and others improvements on November 24, 2022 -> 0.14
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]
@@ -41,3 +43,4 @@ TO-DO:
 - Home page (Partially [DONE] -> shown texts needed to revised if needed)
 - Admin&User Dashboard [Expect to start at v0.142]
 - iTicketViewer
+- Add page restriction to all that needed

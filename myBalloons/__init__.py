@@ -126,8 +126,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.138, status='Initial Beta#1',
-                         build=20221124, version_note='Complete Admin-User-Guest Permission restrictions, and overall improvements')
+systemInfoObject = About(version=0.14, status='Initial Fixed#1',
+                         build=20221124, version_note='Fix bugs at sign-up where master key is not accepting None type, iTicketViewer added, and others improvements')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 
@@ -136,4 +136,4 @@ rootView = Blueprint('rootView', __name__)
 def root_view():
     return render_template("base.html", about=systemInfo, user=current_user)
 
-# Initial Beta#1: Complete Admin-User-Guest Permission restrictions, and overall improvements on November 24, 2022 -> 0.138
+# Initial Fixed#1: Fix bugs at sign-up where master key is not accepting None type, iTicketViewer added, and others improvements on November 24, 2022 -> 0.14
