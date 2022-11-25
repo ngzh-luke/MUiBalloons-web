@@ -16,11 +16,30 @@ endblock %}{% block content %}
             class="img-thumbnail d-block"
             alt="..."
           />
-          <div>First Name</div>
-          <div>Last Name</div>
+          <div class="vstack gap-1">
+            <h2>
+              <span
+                style="color: Green; font-weight: bolder; font-style: oblique"
+                >INFO:</span
+              >
+            </h2>
+            <div class="align-self-start mx-2">
+              <span style="font-weight: 900">First Name:&ensp;</span
+              >{{user.fname}}
+            </div>
+            <div class="align-self-start mx-2">
+              <span style="font-weight: 900">Last Name:&ensp;</span
+              >{{user.lname}}
+            </div>
+            <div class="align-self-start mx-2">
+              <span style="font-weight: 900">Account Role:&ensp;</span
+              >{{user.roleRepr}}
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    (-*****-)
   </div>
 </div>
 

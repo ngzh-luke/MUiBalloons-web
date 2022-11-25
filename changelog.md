@@ -40,6 +40,8 @@
 
 # Initial Development#5.1: Update BootStrap version from **"5.2.2"** to **"5.2.3"**, make a draft of the page and add page restriction on Admin Dashboard, other improvements on November 25, 2022 -> 0.143
 
+# Initial Development#5.2: User&Admin Dashboard Layout draft, database table changes, other improvements on November 25, 2022 -> 0.144
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]

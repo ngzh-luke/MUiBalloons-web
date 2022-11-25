@@ -23,9 +23,11 @@ import pytz
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
-    fname = db.Column(db.String(56))
-    lname = db.Column(db.String(56))
     email = db.Column(db.String(156), unique=True)
+    fname = db.Column(db.String(56), default=email)
+    lname = db.Column(db.String(56), default="Null")
+    full_name = db.Column(db.String(), nullable=True)
+    student_id = db.Column(db.String(10), nullable=True)
     password = db.Column(db.String())
     active = db.Column(db.Boolean(), default=False)
     phone_country_code = db.Column(db.String(5))
@@ -35,13 +37,15 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime(timezone=True), default=datetime.now(pytz.timezone('Asia/Bangkok')))
     # roles = db.relationship('Role', secondary=roles_users,
                             #  backref=db.backref('users', lazy='dynamic'))
-    points = db.Column(db.Integer, default=0)
-    # theRoles = []
+    points = db.relationship('Points',backref=db.backref('users'))
+    # total_points = db.Column(db.Integer, default=0)
     role_level = db.Column(db.Integer, default=0,nullable=False) # 0 = user, 1 = admin, 2 = super-admin (not defined yet)
     master_key_applied = db.Column(db.String(), nullable=True)
     s_question = db.Column(db.String(), nullable=False)
     s_answer = db.Column(db.String(), nullable =False)
-    profile_pic = db.Column(db.String(), nullable=True)
+    # profile_pic = db.Column(db.String(), nullable=True)
+    college_abbriviation = db.Column(db.String(5), nullable =False, default='MU')
+    remarks = db.Column(db.String(), nullable=True)
 
     """ # def __init__(self, email, password, fname='', lname='', role:list=['user'], phone_country_code='+66'):
     #     self.fname = fname
@@ -90,7 +94,6 @@ class User(db.Model, UserMixin):
     
 
 
-
     def __str__(self):
         return self.email
 
@@ -108,6 +111,7 @@ class Ticket(db.Model) :
 class Points(db.Model):
     points_ref_code = db.Column(db.String(), primary_key = True, unique = True)
     points_amount = db.Column(db.Integer, default=0)
+    give_points_to = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
 class TheKeys(db.Model) :
