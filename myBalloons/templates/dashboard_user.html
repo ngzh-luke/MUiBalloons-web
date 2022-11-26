@@ -26,8 +26,8 @@
               >
             </h2>
             <div class="align-self-start mx-2">
-              <span style="font-weight: 900">Full Name:&ensp;</span
-              >{{user.full_name}}
+              <span style="font-weight: 900">Full Name:&ensp;</span>{{user.fname
+              + " " + user.lname}}
             </div>
             <div class="align-self-start mx-2">
               <span style="font-weight: 900">First Name:&ensp;</span
@@ -80,7 +80,21 @@
             </div>
           </div>
         </div>
-        <div>Set 3</div>
+        <div
+          class="hstack gap-3 py-3 mx-3 my-3 border border-2 border-dark rounded-2"
+        >
+          <div class="vstack gap-1" align="center">
+            <h3>Ticket</h3>
+            <div class="mx-3 my-3" align="start">
+              <div class="vstack gap-1 py-1 px-5 mx-3 align-self-center">
+                <span style="font-weight: 900">Total:</span>
+                <span class="align-self-start"
+                  ><h4>&ensp;{{user.points}}</h4></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div>Set 4</div>

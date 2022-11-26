@@ -42,6 +42,8 @@
 
 # Initial Development#5.2: User&Admin Dashboard Layout draft, database table changes, other improvements on November 25, 2022 -> 0.144
 
+# Initial Development#6: Overall improvements on November 26, 2022 -> 0.1442
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]

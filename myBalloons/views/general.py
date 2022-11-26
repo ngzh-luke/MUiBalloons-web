@@ -12,4 +12,4 @@ def home(): # level = 0
 
 @views.route('/iticketviewer/')
 def iTicketViewer(): # level = 0
-    return render_template('iticketviewer.html', user=current_user)
+    return render_template('iticketviewer.html', user=current_user, about=systemInfo, systemVersion=systemVersion)

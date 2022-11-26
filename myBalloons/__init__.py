@@ -74,17 +74,11 @@ def create_app():
             k2 = TheKeys(key='admin')
             d1 = User(email="demo@admin.com", fname="Admin", lname="Admin Lastname", password=generate_password_hash("admin").decode('utf-8'),
              role_level=1, s_question='question', s_answer='answer')
-            try:
-                d1.full_name = d1.fname + " " + d1.lname
-            except:
-                pass
+            
             d2 = User(email='demo@user.com',fname="User", lname="User Lastname", 
             password=generate_password_hash("user").decode('utf-8'),s_question='question', 
             s_answer='answer')    
-            try:
-                d2.full_name= d2.fname + " " + d2.lname
-            except:
-                pass
+            
             db.session.add_all([k1,k2,d1, d2])
             db.session.commit()
         except Exception as e:
@@ -132,8 +126,8 @@ class About():
     def getSystemVersion(self) -> str:
         return str(self.version)
 
-systemInfoObject = About(version=0.144, status='Initial Development#5.2',
-                         build=20221125, version_note='User&Admin Dashboard Layout draft, database table changes, other improvements')
+systemInfoObject = About(version=0.1442, status='Initial Development#6',
+                         build=20221126, version_note='Overall improvements')
 systemInfo = systemInfoObject.__repr__()
 systemVersion = systemInfoObject.getSystemVersion()
 
@@ -142,4 +136,4 @@ rootView = Blueprint('rootView', __name__)
 def root_view():
     return render_template("base.html", about=systemInfo, user=current_user)
 
-# Initial Development#5.2: User&Admin Dashboard Layout draft, database table changes, other improvements on November 25, 2022 -> 0.144
+# Initial Development#6: Overall improvements on November 26, 2022 -> 0.1442

@@ -26,7 +26,6 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(156), unique=True)
     fname = db.Column(db.String(56), default=email)
     lname = db.Column(db.String(56), default="Null")
-    full_name = db.Column(db.String(), nullable=True)
     student_id = db.Column(db.String(10), nullable=True)
     password = db.Column(db.String())
     active = db.Column(db.Boolean(), default=False)
@@ -38,6 +37,7 @@ class User(db.Model, UserMixin):
     # roles = db.relationship('Role', secondary=roles_users,
                             #  backref=db.backref('users', lazy='dynamic'))
     points = db.relationship('Points',backref=db.backref('users'))
+    ticket = db.relationship('Ticket')
     # total_points = db.Column(db.Integer, default=0)
     role_level = db.Column(db.Integer, default=0,nullable=False) # 0 = user, 1 = admin, 2 = super-admin (not defined yet)
     master_key_applied = db.Column(db.String(), nullable=True)
