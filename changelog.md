@@ -54,3 +54,4 @@ TO-DO:
 - Add page restriction to all that needed
 - Notification System
 - Profile (Avatar) System
+- Login Session Timeout
