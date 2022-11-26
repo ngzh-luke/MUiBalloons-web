@@ -6,6 +6,8 @@ MUiBalloons-myBalloonsSystem source code
 
 Please check the LICENSE.md for details.
 
+# Development Status: **Suspended until December 17, 2022**
+
 # For development history please check changelog.md
 
 Current Status: **Initial Development#6**
