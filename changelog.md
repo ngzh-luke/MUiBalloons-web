@@ -44,6 +44,8 @@
 
 # Initial Development#6: Overall improvements on November 26, 2022 -> 0.1442
 
+# Development has been suspended until December 17, 2022
+
 TO-DO:
 
 - Implement custom navigation bar [DONE]
