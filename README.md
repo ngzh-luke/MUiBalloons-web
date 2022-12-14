@@ -1,6 +1,8 @@
-# MUiBalloons Website includes
+# MUiBalloons
 
-    1. Website (Static)
+#includes
+
+    1. iBalloons Website (Static)
     2. myBalloons System (Web application)
 
 # MUiBalloons-myBalloonsSystem

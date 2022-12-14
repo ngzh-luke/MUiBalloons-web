@@ -1,4 +1,4 @@
-# MU iBalloons, myBalloons System update history
+# MU iBalloons, iBalloons web and myBalloons System update history
 
 ## The project is developed by Kittipich "Luke" Aiumbhornsin
 
