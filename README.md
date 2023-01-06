@@ -7,19 +7,19 @@
 
 ### live now at: https://
 
-# MUiBalloons
+## About
 
 MUiBalloons-website source code
 MUiBalloons-myBalloonsSystem source code
 Developed using Django Framework
 
-## This project is licensed under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0).
+### This project is licensed under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0).
 
 Please check the LICENSE.md for details.
 
-## Development Status: ~~**Suspended until December 17, 2022 [*Expected to be back on progress on December 15, 2022*]**~~ Developing
+### Development Status: ~~**Suspended until December 17, 2022 [*Expected to be back on progress on December 15, 2022*]**~~ Developing
 
-## For development history please check changelog.md
+### For development history please check changelog.md
 
 Current Status: **Initial Development#7**
 Current Version: **0.2**
