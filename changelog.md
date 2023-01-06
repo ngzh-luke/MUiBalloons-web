@@ -44,11 +44,11 @@
 
 - Initial Development#6: Overall improvements on November 26, 2022 -> 0.1442
 
-## Development has been suspended until December 17, 2022 [EXPECT to back on progress on December 15, 2022]
+~~## Development has been suspended until December 17, 2022 [EXPECT to back on progress on December 15, 2022]~~
 
 (added PyScript CDN on December 14, 2022)
 
-- Initial Development#
+- Initial Development#7: Preparing for develop using Django and preparing for new blueprint and plan on January 6, 2023 -> 0.2
 
 TO-DO:
 

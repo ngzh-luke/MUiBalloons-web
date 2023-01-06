@@ -131,12 +131,14 @@ dmypy.json
 # Virtual Env
 .myBalloons_env
 myBalloons_env/
+iballoons/
 
 # database
 .instance
 instance/
 
 .DS_Store
+
 
 # Running config (.json)
 .vscode

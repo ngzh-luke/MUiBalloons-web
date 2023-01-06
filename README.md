@@ -1,26 +1,29 @@
-# MUiBalloons
+# MUiBalloons-website
 
 #includes
 
     1. iBalloons Website (Static)
     2. myBalloons System (Web application)
 
-# MUiBalloons-myBalloonsSystem
+### live now at: https://
+
+# MUiBalloons
 
 MUiBalloons-website source code
 MUiBalloons-myBalloonsSystem source code
+Developed using Django Framework
 
 ## This project is licensed under the terms of the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License (CC BY-NC-SA 4.0).
 
 Please check the LICENSE.md for details.
 
-## Development Status: **Suspended until December 17, 2022 [*Expected to be back on progress on December 15, 2022*]**
+## Development Status: ~~**Suspended until December 17, 2022 [*Expected to be back on progress on December 15, 2022*]**~~ Developing
 
 ## For development history please check changelog.md
 
-Current Status: **Initial Development#6**
-Current Version: **0.1442**
-Updated: **November 26, 2022**
+Current Status: **Initial Development#7**
+Current Version: **0.2**
+Updated: **January 6, 2023**
 
 ---
 
@@ -40,3 +43,5 @@ Updated: **November 26, 2022**
 
 #run!
 `python main.py`
+
+---
